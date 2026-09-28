@@ -1,9 +1,16 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Iris 作品集</title>
 <meta name="description" content="Iris：AI 应用 / Agent 工程作品集">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234B3FA0'/%3E%3Ctext x='16' y='23' font-size='19' font-family='serif' font-weight='900' text-anchor='middle' fill='%23fff'%3EI%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@600;900&display=swap">
+<!-- 字体异步加载：国内访问 Google Fonts 可能被墙，不能让它挡住首屏；加载不到就用系统宋体/等宽 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@600;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@600;900&display=swap"></noscript>
 <style>
 :root{
   --ground:#F3F4F7; --paper:#FFFFFF; --ink:#1A1B25; --ink-2:#4B4D5E; --ink-3:#7A7C8E;
@@ -268,10 +275,10 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
   *,*::before,*::after{transition-duration:0s!important}
 }
 </style>
+</head>
+<body>
 
 <div class="progress" aria-hidden="true"><i></i></div>
-
-<div class="draft"><div class="wrap">草稿，发出前删掉这一条 · 公开仓净化后挂链接 · 补联系方式 · WAIC 提审后更新「少许是多少」 · 配演示视频</div></div>
 
 <nav class="nav" aria-label="页面导航"><div class="wrap">
   <a class="me" href="#top">Iris</a>
@@ -285,7 +292,7 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
 <main class="wrap" id="top">
 
 <header class="hero">
-  <p class="eyebrow load">IRIS · AI 应用 / AGENT 工程</p>
+  <p class="eyebrow load">Iris · AI 应用 / AGENT 工程</p>
   <h1 class="load" style="--d:.06s">让 AI 写出来的系统，<br>始终<em>在人的控制之下</em>。</h1>
   <p class="lede load" style="--d:.14s">宠物行业一线出身，现在带多个 coding agent 做项目。我定边界，agent 施工，最后由我验收。</p>
   <div class="relay load" style="--d:.22s">
@@ -299,7 +306,7 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
     <p class="relay-cap" aria-live="polite">选题和需求调研，定权限边界和验收标准。</p>
   </div>
   <div class="facts load" style="--d:.3s">
-    <span>数字媒体技术专业</span><span>CAIE 一级 A · 二级通过</span><span>MIIT AI 工程师</span><span>GitHub <a href="https://github.com/Irisiochan">Irisiochan</a></span>
+    <span>数字媒体技术专业</span><span>CAIE 一级 · 二级通过</span><span>MIIT AI 工程师</span><span>GitHub <a href="https://github.com/Irisiochan">Irisiochan</a></span>
   </div>
 </header>
 
@@ -315,7 +322,7 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
 <!-- ================= AI HUB ================= -->
 <section class="chapter" id="hub">
   <div class="ch-head" data-reveal>
-    <span class="tag">多 AGENT 协作平台 · 主打项目</span>
+    <span class="tag">多 AGENT 协作平台 </span>
     <h2>AI Hub</h2>
     <p class="one">多个 AI 编程工具接进同一套会话、记忆和任务总线，在「会议室」里按席位分工。</p>
     <div class="chips"><span class="chip">TypeScript</span><span class="chip">Express</span><span class="chip">SQLite</span><span class="chip">MCP</span><span class="chip">React</span><span class="chip">systemd</span></div>
@@ -645,7 +652,7 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
       <span class="tab-ind" aria-hidden="true"></span>
     </div>
     <div class="panel" role="tabpanel" id="sx-p1" aria-labelledby="sx-t1">
-      <p>最早做的是给宠物寄养店员用的「寄养手记」，我做过两年寄养，痛点是真的。调研后放弃了：门店都有自己的流程和小程序，第三方工具接不进去。换成我自己就是用户的题目：看不懂菜谱里的模糊词。内测时有人想记奶茶热量，于是合并成奶茶为主、菜谱为辅。</p>
+      <p>最早选题是给宠物寄养店员用的「寄养手记」，从日常工作的真实痛点出发，调研后放弃了：门店都有自己的流程和小程序，第三方工具接不进去。换成了我和朋友就是用户的题目：看不懂菜谱里的模糊词。内测时有人想记奶茶热量，于是合并成奶茶为主、菜谱为辅。</p>
       <ul class="pts" style="margin-top:18px">
         <li><b>Agent</b><span>Claude Code 写方案和评审，OpenCode 执行，Kimi 抓菜单数据，Codex 做验收并贴云函数 requestID</span></li>
       </ul>
@@ -654,10 +661,10 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
       <p class="yr">2026</p>
       <ol class="decisions">
         <li><time>08-19</time><span>报名 WAIC 东部赛区，选题「寄养手记」</span></li>
-        <li><time>08-27</time><span>调研后放弃寄养方向，改做菜谱模糊词</span></li>
+        <li><time>08-27</time><span>调研后放弃 ToB 方向，改做 ToC 菜谱模糊词</span></li>
         <li><time>09-20</time><span>奶茶和菜谱合并成一个作品，奶茶为主（长菜谱会截断，长尾词兜不住）</span></li>
         <li><time>09-22</time><span>不硬算糖（品牌都不公示糖的克数），改看热量和碳水</span></li>
-        <li><time>09-25</time><span>视觉大模型要切付费计费；在「切计费 / 改微信 OCR / 砍掉识别」里选了 OCR</span></li>
+        <li><time>09-25</time><span>接入视觉大模型审核更严格，选了 OCR</span></li>
       </ol>
     </div>
     <div class="panel" role="tabpanel" id="sx-p3" aria-labelledby="sx-t3" hidden>
@@ -674,9 +681,7 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
     </div>
     <div class="panel" role="tabpanel" id="sx-p4" aria-labelledby="sx-t4" hidden>
       <ul class="limits">
-        <li>主路径目前没有调用生成式模型，识别靠 OCR 加规则。</li>
-        <li>识别只在开发者工具里用 2 张选项页截图验过；订单详情页和杯贴还没有真图验证。</li>
-        <li>9-25 之后的改动还没上真机；还没有真实用户的使用数据。</li>
+        <li>9-28 审核中，还未上线。</li>
       </ul>
     </div>
   </div>
@@ -776,8 +781,8 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
   </div>
   <div class="about-grid" data-reveal>
     <div><h3>背景</h3><p>数字媒体技术专业。在宠物行业一线做了约两年：寄养、洗护、喂养、客户沟通。习惯先找流程里会出事的地方，再用记录和提醒堵上。做 agent 系统关心的也是这些：谁能动什么，出错了怎么发现，怎么回滚。</p></div>
-    <div><h3>方向</h3><p>AI 应用 / Agent 工程。长期想做宠物行业加 AI：流程自动化、智能客服、知识库。</p></div>
-    <div><h3>证书</h3><p>CAIE 一级（A）、二级（通过）；MIIT AI 工程师。</p></div>
+    <div><h3>方向</h3><p>AI 应用 / Agent 工程。长期想做 Agent 应用：流程自动化、智能客服、知识库。</p></div>
+    <div><h3>证书</h3><p>CAIE 一级、二级；MIIT AI 工程师。</p></div>
     <div><h3>常用工具</h3><p>Claude Code、Codex、Grok CLI、OpenCode、Kimi；TypeScript、Python、微信小程序、MCP、Linux、Git。</p></div>
   </div>
 </section>
@@ -785,7 +790,7 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
 </main>
 
 <footer class="wrap">
-  <span>联系：GitHub <a href="https://github.com/Irisiochan">Irisiochan</a> · 邮箱 / 微信（待补）</span>
+  <span>联系：GitHub <a href="https://github.com/Irisiochan">Irisiochan</a> · 邮箱：chamoqiansheng@gmail.com · 微信：chamoqiansheng</span>
   <span>2026-09-28 更新。数字均来自项目仓库和任务记录，单次实测已注明；演示区为网页模拟。</span>
 </footer>
 
@@ -1149,3 +1154,5 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
   }
 })();
 </script>
+</body>
+</html>
