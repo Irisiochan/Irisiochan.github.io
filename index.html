@@ -60,6 +60,11 @@ p{margin:0}
 .nav a.on::after{transform:scaleX(1)}
 .nav .me{font-family:var(--f-display);font-weight:900;font-size:17px;color:var(--ink);margin-right:auto}
 .nav .me::after{display:none}
+/* 窄屏导航放不下（约 486px 以下）：右缘渐隐提示可横滑，末尾留白让最后一项能滑出渐隐区 */
+@media (max-width:500px){
+  .nav .wrap{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 36px),transparent)}
+  .nav .wrap::after{content:"";flex:0 0 20px}
+}
 .draft{background:var(--iris-soft);color:var(--iris-ink);font-size:12.5px;padding-block:8px;line-height:1.6}
 
 /* hero */
@@ -920,7 +925,8 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
     const addLog = (html, kind, anim) => {
       const li = document.createElement('li');
       if (kind) li.className = kind;
-      li.innerHTML = html;
+      // 正文包一层：li 是「序号 | 正文」两列网格，正文里夹 <b>/<code> 时不包会被拆成多个格子，挤进序号列叠字
+      li.innerHTML = '<span>' + html + '</span>';
       ol.appendChild(li);
       sc.scrollTop = sc.scrollHeight;
       if (anim && !reduce) li.animate([{ opacity: 0, transform: 'translateX(-8px)' }, { opacity: 1, transform: 'none' }], { duration: 300 });
