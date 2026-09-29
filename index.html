@@ -227,6 +227,9 @@ p{margin:0}
 .ph-side{display:grid;gap:22px;max-width:30em}
 .ph-side h3{font-family:var(--f-body);font-size:15px;font-weight:600;margin-bottom:6px}
 .ph-side p{color:var(--ink-2);font-size:14px}
+/* 小程序码本身是白底：深色模式下也垫白卡，保证能扫 */
+.qr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center}
+.qr img{display:block;width:120px;height:120px;padding:6px;background:#fff;border:1px solid var(--rule);border-radius:12px}
 .rounds{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin-top:10px;font-family:var(--f-mono);font-size:12px}
 .rounds span{padding:3px 9px;border-radius:3px;background:var(--fail-soft);color:var(--fail)}
 .rounds span.ok{background:var(--pass-soft);color:var(--pass)}
@@ -636,6 +639,13 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
       <div>
         <h3>试试看</h3>
         <p>点奶茶的杯型和甜度，或者切到「少许是多少」点菜谱里的词，再把灶具换成电磁炉。数据取自小程序的规则库和霸王茶姬官方公示，这里是网页复刻。</p>
+      </div>
+      <div class="qr">
+        <img src="assets/shaoxu-qr.png" width="120" height="120" alt="少许是多少 微信小程序码" loading="lazy">
+        <div>
+          <h3>扫码用真的</h3>
+          <p>小程序已上线。电脑上用微信扫码；手机在微信里打开本页，长按小程序码识别。</p>
+        </div>
       </div>
       <div>
         <h3>答案走规则和数据</h3>
