@@ -269,6 +269,31 @@ p{margin:0}
 .readout .note{color:var(--ink-2);font-size:14px;min-height:4.8em}
 .replay{justify-self:start}
 
+/* mv: 封面是链接，点了才换成 B站播放器，首屏不加载 iframe */
+.mv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:48px}
+@media (max-width:780px){.mv-grid{grid-template-columns:1fr}}
+.mv{background:var(--paper);border:1px solid var(--rule);display:grid;align-content:start}
+.mv-media{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
+.mv-media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mv-play{position:absolute;inset:0;display:block}
+.mv-play:focus-visible{outline-offset:-4px}
+.mv-play img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.mv-play:hover img{transform:scale(1.03)}
+.mv-btn{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;background:color-mix(in srgb,var(--iris) 90%,transparent);box-shadow:0 12px 28px -10px rgba(0,0,0,.55);transition:transform .3s var(--ease)}
+.mv-btn::after{content:"";position:absolute;left:25px;top:20px;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent var(--on-iris)}
+.mv-play:hover .mv-btn{transform:scale(1.08)}
+.mv-src{position:absolute;right:10px;bottom:8px;font-family:var(--f-mono);font-size:11px;color:#fff;background:rgba(0,0,0,.5);padding:1px 7px;border-radius:2px}
+.mv-body{padding:18px 20px 20px;display:grid;gap:10px}
+.mv-body h3{font-size:21px;font-weight:900}
+.mv-meta{font-size:11.5px;color:var(--ink-3)}
+.mv-body p{color:var(--ink-2);font-size:14px}
+.mv-split{margin:2px 0 0;padding-top:12px;border-top:1px dashed var(--rule);display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13.5px}
+.mv-split dt{font-family:var(--f-mono);font-size:12px;color:var(--iris);padding-top:2px}
+.mv-split dd{margin:0;color:var(--ink-2)}
+.mv-body .go{font-size:13.5px;justify-self:start}
+.mv-notes{margin-top:40px;max-width:50em}
+.mv-credit{margin-top:22px;font-size:12px;line-height:1.7;color:var(--ink-3);max-width:50em}
+
 /* about + footer */
 .about-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 48px;margin-top:36px}
 @media (max-width:720px){.about-grid{grid-template-columns:1fr}}
@@ -294,6 +319,7 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
   <a href="#vault">Memory Vault</a>
   <a href="#shaoxu">少许是多少</a>
   <a href="#camera">相机风格配方</a>
+  <a href="#mv">MV</a>
   <a href="#about">关于我</a>
 </div></nav>
 
@@ -789,6 +815,66 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
   </div>
 </section>
 
+<!-- ================= MV ================= -->
+<section class="chapter" id="mv">
+  <div class="ch-head" data-reveal>
+    <span class="tag">业余创作 · 两支 MV</span>
+    <h2>和 agent 一起做 MV</h2>
+    <p class="one">两首歌是我用 Suno 生成的。画面由 Claude Code 写代码逐帧渲染，《Astra》里的实拍质感画面由 Grok Imagine 生成。我定方向、划边界、看片验收，和做项目是同一套分工。</p>
+    <div class="chips"><span class="chip">GLSL</span><span class="chip">Python</span><span class="chip">moderngl</span><span class="chip">faster-whisper</span><span class="chip">Grok Imagine</span><span class="chip">Suno</span></div>
+  </div>
+
+  <div class="mv-grid">
+    <article class="mv" data-reveal>
+      <div class="mv-media">
+        <a class="mv-play" href="https://www.bilibili.com/video/BV1EaaY6GE1R/" data-bvid="BV1EaaY6GE1R" aria-label="播放《Claude》MV（B站）">
+          <img src="assets/mv-claude.jpg" width="1280" height="720" alt="《Claude》MV 画面：几百条光线汇成一个八芒星号，上方拱着一行手写歌词" loading="lazy">
+          <span class="mv-btn" aria-hidden="true"></span><span class="mv-src" aria-hidden="true">B站</span>
+        </a>
+      </div>
+      <div class="mv-body">
+        <h3>《Claude》· 一行</h3>
+        <p class="mv-meta mono">3:16 · 1080p60 · 不用视频和图片素材</p>
+        <p>Claude 是一个字接一个字写出来的，所以全片只有一条橙色的线：开头是对话框里的光标，后来是歌词的底线，最后汇成一个星号。唱到哪个字，笔尖就按真实笔顺写出哪个字。</p>
+        <dl class="mv-split">
+          <dt>我</dt><dd>歌词直接做成画面，不加字幕条；横屏；结尾的星号重新设计，不用官方标志</dd>
+          <dt>Agent</dt><dd>Claude Code 写渲染器、逐字歌词对齐、笔顺动画和一笔签名</dd>
+        </dl>
+        <a class="go" href="https://www.bilibili.com/video/BV1EaaY6GE1R/">在 B站看 →</a>
+      </div>
+    </article>
+    <article class="mv" data-reveal data-delay="100">
+      <div class="mv-media">
+        <a class="mv-play" href="https://www.bilibili.com/video/BV1nKaR6zECx/" data-bvid="BV1nKaR6zECx" aria-label="播放《Astra》MV（B站）">
+          <img src="assets/mv-astra.jpg" width="1280" height="720" alt="《Astra》MV 画面：纸上用墨点画出的北天星图，下方题名 ASTRA" loading="lazy">
+          <span class="mv-btn" aria-hidden="true"></span><span class="mv-src" aria-hidden="true">B站</span>
+        </a>
+      </div>
+      <div class="mv-body">
+        <h3>《Astra》· 显影</h3>
+        <p class="mv-meta mono">4:23 · 1080p24 · 代码渲染 + Grok Imagine</p>
+        <p>Astra 读过人写下的一切，却没亲眼见过世界。她的部分画在纸上：墨、铅笔、按真实星表画的星图；真实世界是生成的实拍质感画面。两者之间每次过渡都像暗房显影，全片没有硬切。</p>
+        <dl class="mv-split">
+          <dt>我</dt><dd>给方向：要有深意，代码和 Grok 都能用；定了做全曲，Grok 额度用完就停</dd>
+          <dt>Agent</dt><dd>Claude Code 写纸墨和显影着色器，驱动 Grok 出图、审图、再生成视频</dd>
+        </dl>
+        <a class="go" href="https://www.bilibili.com/video/BV1nKaR6zECx/">在 B站看 →</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="mv-notes" data-reveal>
+    <ul class="pts">
+      <li><b>歌词时间</b><span>faster-whisper 转写后和已知歌词逐字对齐，同字或同拼音都算匹配；《Claude》486 个字对上 470 个</span></li>
+      <li><b>手写</b><span>用开源笔顺数据给每个字烘焙笔画顺序，着色器给一个笔进度，字就按真实笔顺写出来</span></li>
+      <li><b>渲染</b><span>Python + moderngl 离线逐帧渲染 GLSL；画面是时间的确定函数，任意一帧都能单独重渲</span></li>
+      <li><b>素材</b><span>Grok 先出静帧，审过、修过再当首帧生成视频；每次生成的提示词和参数都存档</span></li>
+      <li><b>验收</b><span>agent 听不到声音：同步靠逐字时间戳和节拍网格，解码成片逐帧算差找跳变；最后由我看片确认</span></li>
+    </ul>
+    <p class="mv-credit">素材与授权：《Astra》的实拍质感画面由 Grok Imagine 生成；星表 HYG Database v4.1（CC BY-SA 4.0）；海岸线 Natural Earth（公共领域）；笔顺数据 Make Me a Hanzi（Arphic Public License）；字体均为 SIL OFL / Apache 授权的开源字体；画面里引用的古典文本均已进入公版。</p>
+  </div>
+</section>
+
 <!-- ================= 关于我 ================= -->
 <section class="chapter" id="about">
   <div class="ch-head" data-reveal>
@@ -807,7 +893,7 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
 
 <footer class="wrap">
   <span>联系：GitHub <a href="https://github.com/Irisiochan">Irisiochan</a> · 邮箱：chamoqiansheng@gmail.com · 微信：chamoqiansheng</span>
-  <span>2026-09-29 更新。数字均来自项目仓库和任务记录，单次实测已注明；演示区为网页模拟。</span>
+  <span>2026-09-30 更新。数字均来自项目仓库和任务记录，单次实测已注明；演示区为网页模拟。</span>
 </footer>
 
 <script>
@@ -1108,6 +1194,19 @@ footer{padding-block:56px 72px;margin-top:80px;border-top:1px solid var(--rule);
     pickGroup('data-stove', v => { stove = v; renderTerm(typeof TERMS[term].value !== 'string'); });
     renderTerm(false);
   }
+
+  /* mv: 点封面才把链接换成 B站播放器；没有 JS 时就是普通的 B站链接 */
+  $$('.mv-play').forEach(a => a.addEventListener('click', ev => {
+    if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button !== 0) return;
+    ev.preventDefault();
+    const f = document.createElement('iframe');
+    f.src = `https://player.bilibili.com/player.html?isOutside=true&bvid=${a.dataset.bvid}&p=1&autoplay=1&danmaku=0&high_quality=1`;
+    f.title = a.getAttribute('aria-label').replace(/^播放/, '');
+    f.allow = 'autoplay; fullscreen; picture-in-picture';
+    f.allowFullscreen = true;
+    a.replaceWith(f);
+    f.focus();
+  }));
 
   /* camera ladder: swatch offset solved with CIEDE2000 */
   const cam = $('#cam-stage');
